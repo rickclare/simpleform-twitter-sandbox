@@ -1,12 +1,22 @@
 - content_for :breadcrumb do
-  %li
-    = link_to "Home", root_path
-    %span.divider /
   %li.active Create User
 
-.well= link_to 'New User', new_user_path, class: 'btn btn-primary'
+.row-fluid
+  = simple_form_for @user, html: {class: 'well span3' } do |f|
+    = f.input :email, wrapper: :append do
+      = f.input_field :email
+      .add-on
+        %i.icon-envelope
 
-= simple_form_for @user do |f|
-  = f.input :email
-  = f.input :password
-  = f.button :submit
+    = f.input :password, wrapper: :append do
+      = f.input_field :password
+      .add-on
+        %i.icon-lock
+
+    %button.btn
+      %i.icon-fire
+      = submit_default_value(@user)
+
+  .span6
+    .well= link_to 'New User', new_user_path, class: 'btn btn-primary pull-right'
+

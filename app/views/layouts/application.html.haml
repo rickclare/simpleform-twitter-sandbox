@@ -26,14 +26,23 @@
                 %ul.dropdown-menu
                   %li= link_to 'List all users', users_path
                   %li= link_to 'New users', new_user_path
-    .container-fluid
-      - if content_for? :breadcrumb
-        .row-fluid
-          .span3.offset2
-            %ul.breadcrumb= yield :breadcrumb
+    #main_container.container-fluid
       .row-fluid
-        .span8
-          .alert.alert-info.fade.in
+        .span12
+          %ul.breadcrumb
+            - if controller.controller_name == 'home' && controller.action_name = 'index'
+              %li.active
+                Home
+                %span.divider /
+            - else
+              %li
+                = link_to "Home", root_path
+                %span.divider /
+
+            = yield :breadcrumb
+      .row-fluid
+        .span12
+          .alert.alert-info.fade.in.pull-right
             %a.close{'data-dismiss' => 'alert', href: jsv} &times;
             %p
               %strong
