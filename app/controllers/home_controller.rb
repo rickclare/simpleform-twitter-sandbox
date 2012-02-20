@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
 
   def index
-    # nothing to do
+    @user = User.new
   end
 
 end

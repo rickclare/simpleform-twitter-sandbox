@@ -1,1 +1,12 @@
-Hello
+- content_for :breadcrumb do
+  %li
+    = link_to "Home", root_path
+    %span.divider /
+  %li.active Create User
+
+.well= link_to 'New User', new_user_path, class: 'btn btn-primary'
+
+= simple_form_for @user do |f|
+  = f.input :email
+  = f.input :password
+  = f.button :submit

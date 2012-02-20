@@ -2,8 +2,61 @@
 %html{class: 'no-js', lang: 'en'}
   %head
     %title SimpleformTwitterSandbox
+    %meta(name='viewport' content='width=device-width, initial-scale=1.0')
     = stylesheet_link_tag 'application', media: 'all'
-    = javascript_include_tag 'application'
     = csrf_meta_tags
   %body
-    = yield
+    %header.navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          %a.btn.btn-navbar{href: jsv, 'data-toggle' => 'collapse', 'data-target' =>  '.nav-collapse'}
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+
+          = link_to 'SimpleForm + Twitter Bootstrap', root_path, class: 'brand'
+
+          .nav-collapse
+            %ul.nav
+              %li= link_to 'Home', root_path
+              %li.dropdown
+                %a.dropdown-toggle{'data-toggle' => 'dropdown', href: jsv}
+                  Users
+                  %b.caret
+                %ul.dropdown-menu
+                  %li= link_to 'List all users', users_path
+                  %li= link_to 'New users', new_user_path
+    .container-fluid
+      - if content_for? :breadcrumb
+        .row-fluid
+          .span3.offset2
+            %ul.breadcrumb= yield :breadcrumb
+      .row-fluid
+        .span8
+          .alert.alert-info.fade.in
+            %a.close{'data-dismiss' => 'alert', href: jsv} &times;
+            %p
+              %strong
+                %a{href: 'https://github.com/plataformatec/simple_form'} SimpleForm
+                2.0 and
+                %a{href: 'http://twitter.github.com/bootstrap'} Twitter Bootstrap
+                sample application.
+            %p
+              Here you'll see the usage of
+              %a{href: 'https://github.com/plataformatec/simple_form'} SimpleForm
+              and the
+              %a{href: 'http://twitter.github.com/bootstrap'} Twitter Bootstrap
+              toolkit on a Rails 3.2 application.
+        - if notice
+          .row-fluid
+            .alert.alert-success.fade.in.span12
+              %a.close{'data-dismiss' => 'alert', href: jsv} &times;
+              %p= notice
+      = yield
+
+      .row-fluid
+        %footer.span12
+          Copyright 2012
+          %a{href: 'http://www.plataformatec.com.br'} Rick
+
+    = javascript_include_tag 'application'
