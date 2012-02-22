@@ -1,0 +1,18 @@
+// Override Global values (variables.scss)
+@import url('http://fonts.googleapis.com/css?family=Chewy');
+$baseFontFamily: 'Chewy', "Helvetica Neue", Helvetica, Arial, sans-serif;
+$baseFontSize: 16px;
+
+@import "bootstrap";
+// Account for navbar-fixed-top style (needs to be added after bootstrap and before responsive)
+// See http://twitter.github.com/bootstrap/components.html#navbar
+@media (min-width: 980px) {
+  body { 
+    padding-top: 20px + ($baseLineHeight * 2);  // 20px is font-size in [.navbar .brand]
+  }
+}
+@import "responsive";
+
+input, button, select, textarea {
+  font-family: $baseFontFamily;
+}
