@@ -2,7 +2,7 @@
   %li.active Create User
 
 .row-fluid
-  = simple_form_for @user, html: {class: 'well span3' } do |f|
+  = simple_form_for @user, html: {class: 'well span4' } do |f|
     = f.input :email, wrapper: :append do
       = f.input_field :email
       .add-on
@@ -17,6 +17,6 @@
       %i.icon-fire
       = submit_default_value(@user)
 
-  .span6
+  .span8
     .well= link_to 'New User', new_user_path, class: 'btn btn-primary pull-right'
 
