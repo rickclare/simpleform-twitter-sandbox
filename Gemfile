@@ -43,6 +43,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'thin', require: false
   gem 'haml-rails', require: false
   gem 'guard-livereload', require: false
   gem 'yajl-ruby'  # improves guard-livereload performance

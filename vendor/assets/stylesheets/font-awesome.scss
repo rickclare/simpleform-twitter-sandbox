@@ -1,3 +1,8 @@
+/* 
+  Adapted from original source: 
+      https://github.com/FortAwesome/Font-Awesome/blob/v1.0.0/sass/font-awesome.scss
+*/
+
 /*  Font Awesome
     the iconic font designed for use with Twitter Bootstrap
     -------------------------------------------------------
@@ -5,8 +10,8 @@
     can be found at: http://fortawesome.github.com/Font-Awesome/
 */
 
-$font-family: 'FontAwesome';
-$font-prefix: 'fontawesome-webfont';
+$fa-family: 'FontAwesome';
+$fa-prefix: 'fontawesome-webfont';
 /* 
     eot:  IE9 Compat Modes 
     eot#iefix: IE6-IE8
@@ -15,13 +20,13 @@ $font-prefix: 'fontawesome-webfont';
     svg:  Legacy iOS
 */
 @font-face {
-  font-family: $font-family;
-  src: url( font_path('#{$font-prefix}.eot'));
-  src: url( font-path('#{$font-prefix}.eot')+"?#iefix") format('embedded-opentype'),
-        url( font-path('#{$font-prefix}.woff')) format('woff'), 
-        url( font-path('#{$font-prefix}.ttf')) format('truetype'),
-        url( font-path('#{$font-prefix}.svgz')+"##{$font-family}Regular") format('svg'),
-        url( font-path('#{$font-prefix}.svg')+"##{$font-family}Regular") format('svg');
+  font-family: $fa-family;
+  src: url( font_path('#{$fa-prefix}.eot'));
+  src: url( font-path('#{$fa-prefix}.eot')+"?#iefix") format('embedded-opentype'),
+        url( font-path('#{$fa-prefix}.woff')) format('woff'), 
+        url( font-path('#{$fa-prefix}.ttf')) format('truetype'),
+        url( font-path('#{$fa-prefix}.svgz')+"##{$fa-family}Regular") format('svg'),
+        url( font-path('#{$fa-prefix}.svg')+"##{$fa-family}Regular") format('svg');
   font-weight: normal;
   font-style: normal;
 }
