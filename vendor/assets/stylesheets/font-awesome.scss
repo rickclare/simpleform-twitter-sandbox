@@ -6,7 +6,7 @@
 */
 
 $font-family: 'FontAwesome';
-$font-path: 'fontawesome-webfont';
+$font-prefix: 'fontawesome-webfont';
 /* 
     eot:  IE9 Compat Modes 
     eot#iefix: IE6-IE8
@@ -16,12 +16,12 @@ $font-path: 'fontawesome-webfont';
 */
 @font-face {
   font-family: $font-family;
-  src: url( font_path('#{$font-path}.eot'));
-  src: url( font-path('#{$font-path}.eot')+"?#iefix") format('embedded-opentype'),
-        url( font-path('#{$font-path}.woff')) format('woff'), 
-        url( font-path('#{$font-path}.ttf')) format('truetype'),
-        url( font-path('#{$font-path}.svgz')+"##{$font-family}Regular") format('svg'),
-        url( font-path('#{$font-path}.svg')+"##{$font-family}Regular") format('svg');
+  src: url( font_path('#{$font-prefix}.eot'));
+  src: url( font-path('#{$font-prefix}.eot')+"?#iefix") format('embedded-opentype'),
+        url( font-path('#{$font-prefix}.woff')) format('woff'), 
+        url( font-path('#{$font-prefix}.ttf')) format('truetype'),
+        url( font-path('#{$font-prefix}.svgz')+"##{$font-family}Regular") format('svg'),
+        url( font-path('#{$font-prefix}.svg')+"##{$font-family}Regular") format('svg');
   font-weight: normal;
   font-style: normal;
 }
