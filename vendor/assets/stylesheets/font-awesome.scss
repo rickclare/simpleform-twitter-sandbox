@@ -1,3 +1,5 @@
+@charset "utf-8";
+
 /* 
   Adapted from original source: 
       https://github.com/FortAwesome/Font-Awesome/blob/v1.0.0/sass/font-awesome.scss
@@ -22,7 +24,8 @@ $fa-prefix: 'fontawesome-webfont';
 @font-face {
   font-family: $fa-family;
   src: url( font_path('#{$fa-prefix}.eot'));
-  src: url( font-path('#{$fa-prefix}.eot')+"?#iefix") format('embedded-opentype'),
+  src: local('☺'),
+        url( font-path('#{$fa-prefix}.eot')+"?#iefix") format('embedded-opentype'),
         url( font-path('#{$fa-prefix}.woff')) format('woff'), 
         url( font-path('#{$fa-prefix}.ttf')) format('truetype'),
         url( font-path('#{$fa-prefix}.svgz')+"##{$fa-family}Regular") format('svg'),
