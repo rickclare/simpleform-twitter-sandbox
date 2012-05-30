@@ -1,22 +1,22 @@
 - content_for :breadcrumb do
-  %li.active Create User
+  li.active Create User
 
 .row-fluid
   = simple_form_for @user, html: {class: 'well span4' } do |f|
     = f.input :email, wrapper: :append do
       = f.input_field :email
       .add-on
-        %i.icon-envelope
+        i.icon-envelope
 
     = f.input :password, wrapper: :append do
       = f.input_field :password
       .add-on
-        %i.icon-lock
+        i.icon-lock
 
-    %button.btn
-      %i.icon-fire
+    button.btn
+      i.icon-fire
+      '
       = submit_default_value(@user)
 
   .span8
-    .well= link_to 'New User', new_user_path, class: 'btn btn-primary pull-right'
-
+    .well = link_to 'New User', new_user_path, class: 'btn btn-primary pull-right'

@@ -1,0 +1,97 @@
+doctype 5
+/ paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither
+| <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+| <!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+| <!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+/ Consider adding a manifest.appcache: h5bp.com/d/Offline -->
+| <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+head
+  title SimpleformTwitterSandbox
+  meta name='viewport' content='width=device-width, initial-scale=1.0'
+  meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'
+  meta charset='utf-8'
+  = stylesheet_link_tag 'application', media: 'all', charset: 'utf-8'
+  = javascript_include_tag 'head', charset: 'utf-8'
+  = csrf_meta_tags
+body
+  / Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6. 
+  / http://chromium.org/developers/how-tos/chrome-frame-getting-started
+  /[ if lt IE 7 ]
+    p class='chromeframe'
+      ' Your browser is
+      em ancient!
+      '
+      a href='http://browsehappy.com' Upgrade to a different browser
+      ' or 
+      a href='http://www.google.com/chromeframe/?redirect=true' Install Google Chrome Frame
+      ' to experience this site.
+
+  header.navbar.navbar-fixed-top
+    .navbar-inner
+      .container
+        a.btn.btn-navbar href=jsv data-toggle='collapse' data-target='.nav-collapse'
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+
+        = link_to 'SimpleForm + Twitter Bootstrap', root_path, class: 'brand'
+
+        .nav-collapse
+          ul.nav
+            li= link_to 'Home', root_path
+            li.dropdown
+              a.dropdown-toggle data-toggle='dropdown' href=jsv
+                | Users
+                b.caret
+              ul.dropdown-menu
+                li= link_to 'List all users', users_path
+                li= link_to 'New users', new_user_path
+  #main_container.container-fluid
+    .row-fluid
+      .span12
+        ul.breadcrumb
+          - if controller.controller_name == 'home' && controller.action_name = 'index'
+            li.active
+              | Home
+              span.divider /
+          - else
+            li
+              = link_to 'Home', root_path
+              span.divider /
+
+          = yield :breadcrumb
+    .row-fluid
+      .span12
+        .alert.alert-info.fade.in.pull-right
+          a.close data-dismiss='alert' href=jsv
+          p
+            strong
+              a href='https://github.com/plataformatec/simple_form' SimpleForm
+              '
+              ' 2.0 and
+              a href='http://twitter.github.com/bootstrap' Twitter Bootstrap
+              '
+              ' sample application.
+          p
+            ' Here you'll see the usage of
+            a href='https://github.com/plataformatec/simple_form' SimpleForm
+            '
+            ' and the
+            a href='http://twitter.github.com/bootstrap' Twitter Bootstrap
+            '
+            ' toolkit on a Rails 3.2 application.
+      - if notice
+        .row-fluid
+          .alert.alert-success.fade.in.span12
+            a.close data-dismiss='alert' href=jsv
+            p= notice
+    = yield
+
+    .row-fluid
+      footer.span12
+        | Copyright 2012
+        a href='http://www.plataformatec.com.br' Plataformatec
+
+  = javascript_include_tag 'application', charset: 'utf-8'
+
+| </html>

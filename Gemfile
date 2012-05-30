@@ -20,7 +20,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem 'haml', '~> 3.2.0.alpha'
+gem 'slim'
 gem 'coffee-filter'
 gem 'simple_form'
 gem 'devise'
@@ -48,7 +48,6 @@ end
 group :development do
   gem 'sextant'
   gem 'thin', require: false
-  gem 'haml-rails'
   gem 'guard-livereload', require: false
   gem 'yajl-ruby'  # improves guard-livereload performance
 end
