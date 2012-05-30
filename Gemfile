@@ -10,8 +10,9 @@ gem 'sqlite3'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
+  gem 'sass', '~> 3.2.0.alpha'
+  gem 'sass-rails',   '~> 3.2.5'
+  gem 'coffee-rails', '~> 3.2.2'
   gem 'uglifier', '>= 1.0.3'
   gem 'bourbon'
   gem 'anjlab-bootstrap-rails', require: 'bootstrap-rails'
@@ -19,6 +20,7 @@ end
 
 gem 'jquery-rails'
 gem 'haml'
+gem 'coffee-filter'
 gem 'simple_form'
 gem 'devise'
 
@@ -45,7 +47,7 @@ end
 group :development do
   gem 'sextant'
   gem 'thin', require: false
-  gem 'haml-rails', require: false
+  gem 'haml-rails'
   gem 'guard-livereload', require: false
   gem 'yajl-ruby'  # improves guard-livereload performance
 end
