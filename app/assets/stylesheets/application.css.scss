@@ -1,4 +1,14 @@
 @charset "utf-8";
-@import "bourbon";
 @import "custom_bootstrap";
+@import "bourbon";  // Include bourbon after bootstrap, to use ensure bourbon mixins are used
 @import "app/global";
+
+// Compass tests
+.test {
+  left: cos(10); // a compass helper
+  border-radius: 4px;  // vendor-prefix border radius becoming unneccsary: https://github.com/thoughtbot/bourbon/pull/95
+}
+
+// Compass sprites testing
+@import "my-icons/*.png";
+@include all-my-icons-sprites;

@@ -13,13 +13,14 @@ group :assets do
   gem 'sass', '~> 3.2.0.alpha'
   gem 'sass-rails',   '~> 3.2.5'
   gem 'coffee-rails', '~> 3.2.2'
+  gem 'compass-rails'
   gem 'uglifier', '>= 1.0.3'
   gem 'bourbon'
   gem 'anjlab-bootstrap-rails', require: 'bootstrap-rails'
 end
 
 gem 'jquery-rails'
-gem 'haml'
+gem 'haml', '~> 3.2.0.alpha'
 gem 'coffee-filter'
 gem 'simple_form'
 gem 'devise'

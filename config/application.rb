@@ -59,5 +59,7 @@ module SimpleformTwitterSandbox
     # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
     config.assets.precompile += %w( head.js )
 
+    config.compass.generated_images_dir = 'app/assets/images/sprites'
+    config.assets.paths << Rails.root.join("app", "assets", "images", "sprites")
   end
 end
