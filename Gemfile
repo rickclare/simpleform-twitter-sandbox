@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.3'
+gem 'rails', '3.2.4'
 
 # Bundle edge Rails instead:
 # gem 'rails', git: 'git://github.com/rails/rails.git'
@@ -13,15 +13,14 @@ group :assets do
   gem 'sass', '~> 3.2.0.alpha'
   gem 'sass-rails',   '~> 3.2.5'
   gem 'coffee-rails', '~> 3.2.2'
-  gem 'compass-rails'
-  gem 'uglifier', '>= 1.0.3'
+  gem 'uglifier', '>= 1.2.4'
+  gem 'compass-rails' # for spriting only
   gem 'bourbon'
   gem 'anjlab-bootstrap-rails', require: 'bootstrap-rails'
 end
 
 gem 'jquery-rails'
 gem 'slim'
-gem 'coffee-filter'
 gem 'simple_form'
 gem 'devise'
 
@@ -41,13 +40,16 @@ gem 'devise'
 # gem 'ruby-debug19', require: 'ruby-debug'
 
 group :development, :test do
-  gem 'guard', require: false
+  gem 'guard', '~> 1.1.0.beta', require: false
+  gem 'ruby_gntp', require: false
   gem 'quiet_assets'
 end
 
 group :development do
   gem 'sextant'
+  gem 'wirble', require: false
+  gem 'what_methods', require: false
   gem 'thin', require: false
-  gem 'guard-livereload', require: false
-  gem 'yajl-ruby'  # improves guard-livereload performance
+  gem 'guard-livereload', git: 'git://github.com/guard/guard-livereload.git', branch: 'guard_1_1', require: false
+  gem 'yajl-ruby', require: false # improves guard-livereload performance
 end
