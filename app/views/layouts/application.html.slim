@@ -85,11 +85,12 @@ body
           .alert.alert-success.fade.in.span12
             a.close data-dismiss='alert' href=jsv
             p= notice
+
     = yield
 
     .row-fluid
       footer.span12
-        | Copyright 2012
+        ' Copyright #{Date.today.year}
         a href='http://www.plataformatec.com.br' Plataformatec
 
   = javascript_include_tag 'application', charset: 'utf-8'
