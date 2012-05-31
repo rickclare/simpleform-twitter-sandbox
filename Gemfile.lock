@@ -192,7 +192,7 @@ DEPENDENCIES
   slim
   sqlite3
   thin
-  uglifier (>= 1.0.3)
+  uglifier (>= 1.2.4)
   what_methods
   wirble
   yajl-ruby
