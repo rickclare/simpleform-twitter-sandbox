@@ -1,17 +1,15 @@
+require 'open-uri'
+guard 'livereload' do
+  watch(%r{app/views/.+\.(erb|haml|slim)})
+  watch(%r{app/helpers/.+\.rb})
+  watch(%r{public/.+\.(css|js|html)})
+  watch(%r{config/locales/.+\.yml})
 
-group :frontend do
-  guard :livereload do
-    watch(%r{app/views/.+\.(erb|haml|slim)})
-    watch(%r{app/helpers/.+\.rb})
-    watch(%r{(public/).+\.(css|js|html)})
-
-    watch(%r{app/assets/stylesheets/(.+)\.s*[ac]ss.*$}) do |m| 
-      %x(curl -sk http://localhost:3000/assets/application.css > /dev/null)
-      'assets/application.css'
-    end
-
-    watch(%r{app/assets/javascripts/(.+\.js).*$}) { |m|  "assets/#{m[1]}" }
-    watch(%r{config/locales/.+\.yml})
+  # Rails Assets Pipeline
+  watch(%r{(app|vendor)/assets/stylesheets/(.+)\.s*[ac]ss.*$}) do |m| 
+    open 'http://localhost:3000/assets/application.css'
+    'assets/application.css'
   end
-  
+
+  watch(%r{(app|vendor)/assets/\w+/(.+\.(js|html)).*})  { |m| "/assets/#{m[2]}" }
 end
