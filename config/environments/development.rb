@@ -1,5 +1,6 @@
 SimpleformTwitterSandbox::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
+  config.middleware.insert_before(Rack::Lock, Rack::LiveReload)
 
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
@@ -36,4 +37,4 @@ SimpleformTwitterSandbox::Application.configure do
   config.assets.debug = true
 end
 
-Slim::Engine.set_default_options pretty: true
+#Slim::Engine.set_default_options pretty: true

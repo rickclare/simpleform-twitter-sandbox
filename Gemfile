@@ -40,8 +40,8 @@ gem 'devise'
 # gem 'ruby-debug19', require: 'ruby-debug'
 
 group :development, :test do
-  gem 'guard', '~> 1.1.0.beta', require: false
-  gem 'ruby_gntp', require: false
+  gem 'guard', require: false
+  gem 'ruby_gntp', require: false  # OS X guard notifications for Growl
   gem 'quiet_assets'
 end
 
@@ -50,6 +50,7 @@ group :development do
   gem 'wirble', require: false
   gem 'what_methods', require: false
   gem 'thin', require: false
-  gem 'guard-livereload', git: 'git://github.com/guard/guard-livereload.git', branch: 'guard_1_1', require: false
+  gem 'guard-livereload', require: false
+  gem 'rack-livereload'
   gem 'yajl-ruby', require: false # improves guard-livereload performance
 end
